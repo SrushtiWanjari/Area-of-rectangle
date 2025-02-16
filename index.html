@@ -6,29 +6,65 @@
     <title>Document</title>
 </head>
 <style>
+    body{
+        background-color: #705C53;
+    }
     .main-container{
         border: 1px solid black;
         width: 300px;
-        padding: 20px;
+        padding: 15px;
         margin: 80px auto;
+        border-radius: 10px;
+        background-color: #F5F5F7;
+        box-shadow: 0 0 10px #F5F5F7 ;
+    }
+    .heading{
+        display: block;
+        justify-content: center;
+        text-align: center;
     }
 
     .user-input{
         display: block;
         justify-content: center;
         margin: 10px;
+        width: 260px;
+        padding: 5px;
+        font-size: 15px;
+        background-color: #F5F5F7;
     }
+    .result{
+        display: block;
+        text-align: center;
+        font-size: 19px;
+    }
+    .btn{
+        padding: 5px 9px;
+        font-size: 18px;
+        margin-left: 10px;
+        width: 130px;
+        border: none;
+        color: #F5F5F7;
+        border-radius: 5px;
+    }
+    .btn-1{
+        background-color: #00802b;
+    }
+    .btn-2{
+        background-color: #ff0000;
+    }
+    
 </style>
 <body>
     <div class="main-container">
-        <h2>Area Of Rectangle</h2>
+        <h2 class="heading">Area Of Rectangle</h2>
         <input type="number" placeholder="Enter First Number..." class="user-input"/>
         <input type="number" placeholder="Enter Second Number..." class="user-input"/>
 
-        <p>Answer:</p>
+        <p class="result">Answer:</p>
 
-        <button>Calculate</button>
-        <button>Reset</button>
+        <button class="btn btn-1">Calculate</button>
+        <button class="btn btn-2">Reset</button>
 
          
     </div>
