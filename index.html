@@ -1,72 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    body{
-        background-color: #705C53;
+  </head>
+  <style>
+    body {
+      background-color: #705c53;
     }
-    .main-container{
-        border: 1px solid black;
-        width: 300px;
-        padding: 15px;
-        margin: 80px auto;
-        border-radius: 10px;
-        background-color: #F5F5F7;
-        box-shadow: 0 0 10px #F5F5F7 ;
+    .main-container {
+      border: 1px solid black;
+      width: 300px;
+      padding: 15px;
+      margin: 80px auto;
+      border-radius: 10px;
+      background-color: #f5f5f7;
+      box-shadow: 0 0 10px #f5f5f7;
     }
-    .heading{
-        display: block;
-        justify-content: center;
-        text-align: center;
+    .heading {
+      display: block;
+      justify-content: center;
+      text-align: center;
     }
 
-    .user-input{
-        display: block;
-        justify-content: center;
-        margin: 10px;
-        width: 260px;
-        padding: 5px;
-        font-size: 15px;
-        background-color: #F5F5F7;
+    .user-input {
+      display: block;
+      justify-content: center;
+      margin: 15px;
+      width: 260px;
+      padding: 5px;
+      font-size: 15px;
+      background-color: #f5f5f7;
     }
-    .result{
-        display: block;
-        text-align: center;
-        font-size: 19px;
+    .result {
+      display: block;
+      text-align: center;
+      font-size: 19px;
     }
-    .btn{
-        padding: 5px 9px;
-        font-size: 18px;
-        margin-left: 10px;
-        width: 130px;
-        border: none;
-        color: #F5F5F7;
-        border-radius: 5px;
+    .btn {
+      padding: 5px 9px;
+      font-size: 18px;
+      margin-left: 10px;
+      width: 130px;
+      border: none;
+      color: #f5f5f7;
+      border-radius: 5px;
     }
-    .btn-1{
-        background-color: #00802b;
+    .btn-1 {
+      background-color: #00802b;
     }
-    .btn-2{
-        background-color: #ff0000;
+    .btn-2 {
+      background-color: #ff0000;
     }
-    
-</style>
-<body>
+  </style>
+  <body>
     <div class="main-container">
-        <h2 class="heading">Area Of Rectangle</h2>
-        <input type="number" placeholder="Enter First Number..." class="user-input"/>
-        <input type="number" placeholder="Enter Second Number..." class="user-input"/>
+      <h2 class="heading">Area Of Rectangle</h2>
+      <input
+        type="number"
+        placeholder="Enter Length of Rectangle (cm)"
+        class="user-input"
+        id="num1"
+      />
+      <input
+        type="number"
+        placeholder="Enter Width of Rectangle (cm)"
+        class="user-input"
+        id="num2"
+      />
 
-        <p class="result">Answer:</p>
+      <p class="result" id="result">Answer:</p>
 
-        <button class="btn btn-1">Calculate</button>
-        <button class="btn btn-2">Reset</button>
-
-         
+      <button class="btn btn-1" id="Calculate" onclick="calculateArea()">
+        Calculate
+      </button>
+      <button class="btn btn-2" id="reset" onclick="resetArea()">Reset</button>
     </div>
-</body>
+
+    <script>
+      const inputBox1 = document.getElementById("num1");
+      const inputBox2 = document.getElementById("num2");
+      const resultElement = document.getElementById("result");
+
+      function calculateArea() {
+        const var1 = parseInt(inputBox1.value);
+        const var2 = parseInt(inputBox2.value);
+        const Area = var1 * var2;
+        resultElement.innerHTML = `Answer : ${Area} cm <sup>2</sup>`;
+      }
+      function resetArea() {
+        inputBox1.value = "";
+        inputBox2.value = "";
+        resultElement.innerText = `Answer :`;
+      }
+    </script>
+  </body>
 </html>
